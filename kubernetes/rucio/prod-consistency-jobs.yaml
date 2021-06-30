@@ -6,7 +6,7 @@ consistency:
     #  server: cmsxrootd-redirectors.gridka.de:1094
     T2_US_Purdue:      
       interval: 7
-      server: cms-m001.rcac.purdue.edu 
+      server: cms-m001.rcac.purdue.edu:1094 
     T2_BR_UERJ:      
       interval: 7
       server: xrootd.hepgrid.uerj.br
@@ -42,7 +42,9 @@ consistency:
       interval: 7
     T2_FR_GRIF_IRFU:
       server: node12.datagrid.cea.fr:11001
-      interval: 7
+      server_root: /dpm/datagrid.cea.fr/home/cms/trivcat/store/
+      remove_prefix: /dpm/datagrid.cea.fr/home/cms/trivcat/
+      interval: 1
     #T2_HU_Budapest_Test:
     #  server: grid143.kfki.hu:11000
     #  interval: 1
@@ -143,12 +145,15 @@ consistency:
       server: se01.indiacms.res.in:11001
       interval: 7
     T2_CH_CSCS:
-      server: cms02.lcg.cscs.ch:1094
-      interval: 7
+      server: cms03.lcg.cscs.ch:1094
+      #server_root: //pnfs/lcg.cscs.ch/cms/trivcat/
+      #remove_prefix: //pnfs/lcg.cscs.ch/cms/trivcat/
+      interval: 1
     T2_FR_IPHC:
-      #server: sbgse1.in2p3.fr
-      server: sbgse1.in2p3.fr:11001
-      interval: 7
+      server: sbgse1.in2p3.fr:1094
+      server_root: /cms/phedex/store
+      remove_prefix: /cms/phedex/
+      interval: 1
     T2_AT_Vienna:
       server: eos.grid.vbc.ac.at:1094
       interval: 7
@@ -200,37 +205,45 @@ consistency:
       server: xrootd-cms.infn.it:1194
       interval: 7
     T2_BR_SPRACE:
-      server: spstrg08.sprace.org.br:1094
+      server: osg-se.sprace.org.br
       interval: 7
     T2_CN_Beijing:
-      server: seadmin.ihep.ac.cn:1094
-      interval: 7
+      server: ccsrm.ihep.ac.cn:1094
+      server_root: /cms/store/
+      remove_prefix: /cms/
+      interval: 1
     T2_DE_DESY:
       server: t2-cms-xrootd01.desy.de:1094
       interval: 7
     T2_EE_Estonia:
-      server: xrootd2:1094
-      interval: 7
+      server: xrootd.hep.kbfi.ee:1094
+      interval: 1
     T2_GR_Ioannina:
-      server: grid02.physics.uoi:11001
-      interval: 7
+      server: grid02.physics.uoi.gr 
+      interval: 1
     T2_HU_Budapest:
       server: grid143.kfki.hu:11000
       interval: 7
     T2_PT_NCG_Lisbon:
-      server: xroot-data01.ncg.ingrid.pt:1094
-      interval: 7
+      server: xroot02.ncg.ingrid.pt:1094
+      #server_root: //cms/store/
+      #remove_prefix: //cms/
+      interval: 1
     T2_TR_METU:
-      server: eymir.grid.metu.edu.tr:11001
-      interval: 7
+      server: eymir.grid.metu.edu.tr
+      server_root: /cms/store/
+      remove_prefix: /cms/
+      interval: 1
     T2_UA_KIPT:
       server: cms-se0.kipt.kharkov.ua:11001
       interval: 7
     T2_UK_London_Brunel:
-      server: dc2-grid-64.brunel.ac.uk:1094
-      interval: 7
-    T2_US_Caltech:
-      server: xrootd.ultralight.org
+      server: dc2-grid-64.brunel.ac.uk
+      server_root: //dpm/brunel.ac.uk/home/cms/store/
+      remove_prefix: //dpm/brunel.ac.uk/home/cms/
+      interval: 1
+    T2_US_Caltech_Ceph:
+      server: transfer-10.ultralight.org
       interval: 7
     T2_US_Florida:
       server: cmsio5.rc.ufl.edu:1094
@@ -239,8 +252,8 @@ consistency:
       server: xrootd15.cmsaf.mit.edu:1094
       interval: 7
     T2_US_Nebraska:
-      server: red-gridftp1.unl.edu:1094
-      interval: 7
+      server: xrootd-local.unl.edu:1094
+      interval: 1
     T2_US_UCSD:
       server: gftp-1.t2.ucsd.edu:1094
       interval: 7
